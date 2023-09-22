@@ -20,8 +20,8 @@ select codigo,monto,tipo,fecha from transacciones
 where codigo is not null
 
 update transacciones set tipo= 'T'
-where monto >'100' and monto <'500'
+where monto >money(100) and monto <money(500) and EXTRACT(MONTH FROM fecha) = 9 
+and hora >'14:00' and hora <'20:00'
 
-update transacciones set fecha
-where EXTRACT(MONTH FROM fecha) = 9
+
 

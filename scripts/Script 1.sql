@@ -20,10 +20,5 @@ where precio
 between '2' and '3'
 
 update productos set stock=0
-where codigo='9818'
+where descripcion is null
 
-update productos set stock=0
-where codigo='9819'
-
-update productos set stock=0
-where codigo='98110'
