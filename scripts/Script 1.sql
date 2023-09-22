@@ -18,3 +18,12 @@ where descripcion is null
 select * from productos
 where precio 
 between '2' and '3'
+
+update productos set stock=0
+where codigo='9818'
+
+update productos set stock=0
+where codigo='9819'
+
+update productos set stock=0
+where codigo='98110'

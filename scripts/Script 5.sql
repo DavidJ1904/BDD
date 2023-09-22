@@ -17,3 +17,6 @@ between '9' and '10'
 
 select * from videojuegos
 where descripcion is null
+
+update videojuegos set descripcion = 'Mejor puntuado'
+where valoracion >9

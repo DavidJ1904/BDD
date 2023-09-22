@@ -19,4 +19,9 @@ between '200' and '2000'
 select codigo,monto,tipo,fecha from transacciones
 where codigo is not null
 
+update transacciones set tipo= 'T'
+where monto >'100' and monto <'500'
+
+update transacciones set fecha
+where EXTRACT(MONTH FROM fecha) = 9
 
