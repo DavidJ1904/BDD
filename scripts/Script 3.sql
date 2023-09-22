@@ -18,3 +18,6 @@ where nombre like 'A%'
 
 update estudiante set apellido='Hernandez'
 where cedula like '17%'
+
+delete from estudiante
+where cedula like '%05'

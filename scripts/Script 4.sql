@@ -19,3 +19,6 @@ where hora >'8:00:00'
 
 update registro_entrada set cedula_empleado = '0823456789' 
 where EXTRACT(MONTH FROM fecha) = 8
+
+delete from registro_entrada
+where EXTRACT(MONTH FROM fecha) = 6
