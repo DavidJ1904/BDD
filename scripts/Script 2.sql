@@ -24,3 +24,15 @@ where cedula_propietario like '17%'
 
 delete from cuentas
 where cedula_propietario like '10%'
+
+--RETO 7
+
+select numero_cuenta,saldo from cuentas
+where saldo > '100' and saldo<'1000'
+
+select * from cuentas
+where fecha_creacion
+between '22/09/2022' and '22/09/2023'
+
+select * from cuentas 
+where saldo='0' or cedula_propietario like '%2'

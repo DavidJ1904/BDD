@@ -24,3 +24,13 @@ where descripcion is null
 
 delete from productos
 where descripcion is null
+
+--RETO 7
+select * from productos
+where stock = '10' and precio < '10'
+
+select nombre, stock from productos
+where nombre like 'M%' or descripcion is null
+
+select nombre from productos
+where descripcion is null or stock='0'

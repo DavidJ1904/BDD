@@ -21,3 +21,8 @@ where cedula like '17%'
 
 delete from estudiante
 where cedula like '%05'
+
+--RETO 7
+
+select nombre,apellido from estudiante
+where nombre like 'M%' or apellido like 'Z%'
