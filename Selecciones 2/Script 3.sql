@@ -60,3 +60,15 @@ alter table estudiantes
 add constraint profesores_estudiantes_fk
 foreign key (codigo_profesor)
 references profesores(codigo)
+
+--RETO 24
+--CONSULTA
+select pro.codigo,es.nombre,es.apellido from 
+estudiantes es, profesores pro
+where es.codigo_profesor = pro.codigo
+and es.apellido like '%n%'
+--SUBCONSULTA
+select es.cedula,es.nombre,es.apellido,es.email,es.fecha_nacimiento,es.codigo_profesor from 
+estudiantes es, profesores pro 
+where es.codigo_profesor = pro.codigo
+and pro.nombre = 'Francisco'

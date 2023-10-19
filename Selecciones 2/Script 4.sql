@@ -83,3 +83,15 @@ insert into empleado(codigo_empleado,nombre,fecha,hora)
 values(12313,'Anthony Maiquiza', '22/07/2024','17:04');
 insert into empleado(codigo_empleado,nombre,fecha,hora)
 values(12314,'Alejandro Majno', '08/10/2012','11:30')
+
+--RETO 24
+--CONSULTA
+select re.cedula_empleado,re.fecha,em.nombre from
+empleado em,registro_entrada re
+where (re.fecha > '2023/08/01' and re.fecha <'2023/08/31') or
+(re.cedula_empleado like '17%' and em.hora >'8:00' and em.hora <'12:00')or
+(re.fecha > '2023/10/06' and re.fecha < '2023/10/20'and re.cedula_empleado like '08%' and em.hora > '9:00' and em.hora<'13:00')
+--SUBCONSULTA
+select em.codigo_empleado,em.nombre,em.fecha,em.hora from
+empleado em,registro_entrada re
+where em.codigo_empleado = re.codigo_registro

@@ -88,3 +88,16 @@ insert into plataforma(id_plataforma,nombre_plataforma,codigo_videojuego)
 values(12109,'Nintendo',63549)
 insert into plataforma(id_plataforma,nombre_plataforma,codigo_videojuego)
 values(12191,'Nintendo',63240)
+--RETO 23
+--CONSULTA
+select vi.nombre,vi.descripcion,vi.valoracion, pl.id_plataforma, pl.nombre_plataforma, pl.codigo_videojuego from 
+plataforma pl, videojuego vi
+where vi.codigo = pl.codigo_videojuego and
+vi.descripcion='Guerra' and vi.valoracion > 7 or
+vi.nombre like 'C%'and vi.valoracion > 8 or
+vi.nombre like 'D%'
+--SUBCONSULTA
+select pl.id_plataforma, pl.nombre_plataforma, pl.codigo_videojuego from 
+plataforma pl, videojuego vi
+where vi.codigo = pl.codigo_videojuego 
+and nombre ='God of Ward'

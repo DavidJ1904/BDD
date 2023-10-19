@@ -104,3 +104,15 @@ values(2134,54143,'Deposito');
 
 insert into banco(codigo_banco,codigo_transaccion,detalle)
 values(9012,54143,'Pago');
+
+--RETO 24
+--CONSULTA
+select * from 
+banco b,transaccion tr
+where tr.codigo = b.codigo_transaccion
+and tr.tipo ='C' and tr.numero_cuenta between '22001' and '22004'
+--SUBCONSULTA
+select * from 
+banco b,transaccion tr
+where tr.codigo = b.codigo_transaccion
+and codigo= codigo_transaccion'1'

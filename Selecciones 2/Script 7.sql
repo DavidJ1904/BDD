@@ -44,3 +44,15 @@ values(89123,1178231332,'09/10/2021',200.1);
 
 select * from cliente
 select *from compras
+
+--RETO 24
+--CONSULTA
+select cl.nombre,cl.apellido from
+cliente cl, compras co
+where cl.cedula=co.cedula
+and cl.cedula like '%7%'
+--SUBCONSULTA
+select cl.cedula,cl.nombre,cl.apellido from
+cliente cl, compras co
+where cl.cedula=co.cedula
+and nombre='Monica'

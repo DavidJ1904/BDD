@@ -52,3 +52,15 @@ insert into prestamo (cedula,monto,fecha_prestamo,hora_prestamo,garante)
 values(1122190918,900,'23/01/2010','19:10',500);
 
 select * from prestamo
+
+--RETO 24
+--CONSULTA
+select pe.cantidad_ahorrada, pr.monto, pr.garante from
+prestamo pr,persona pe
+where pr.cedula=pe.cedula
+and garante between '100' and '1000'
+--SUBCONSULTA
+select * from
+prestamo pr,persona pe
+where pr.cedula=pe.cedula
+and nombre='Sean'
