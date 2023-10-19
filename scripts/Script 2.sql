@@ -11,6 +11,7 @@ select * from cuentas
 
 select numero_cuenta,saldo from cuentas
 
+delete from cuentas
 select * from cuentas
 where fecha_creacion
 between '21/07/2023' and '21/09/2023'
@@ -36,3 +37,34 @@ between '22/09/2022' and '22/09/2023'
 
 select * from cuentas 
 where saldo='0' or cedula_propietario like '%2'
+
+--RETO 23
+create table usuario (
+	cedula char (10),
+	nombre varchar(25) not null,
+	apellido varchar(25) not null,
+	tipo_cuenta varchar (20),
+	limite_credito decimal(10,2),
+	constraint usuario_pk primary key (cedula)
+)
+
+alter table cuentas
+add constraint usuario_cuentas_fk
+foreign key (cedula_propietario)
+references usuario(cedula)
+
+select * from usuario
+
+insert into usuario(cedula,nombre,apellido,tipo_cuenta,limite_credito)
+values('24502','Carlos','Mejia','Cuenta corriente',2030);
+insert into usuario(cedula,nombre,apellido,tipo_cuenta,limite_credito)
+values('24522','Juan','Albarado','Cuenta ahorros',1230);
+insert into usuario(cedula,nombre,apellido,tipo_cuenta,limite_credito)
+values('24322','Felipe','Rojas','Cuenta suspendida',0)
+
+insert into cuentas (numero_cuenta,cedula_propietario,fecha_creacion,saldo)
+values ('25569','24502','15/01/2023',200);
+insert into cuentas (numero_cuenta,cedula_propietario,fecha_creacion,saldo)
+values ('25413','24522','25/11/2003',1230);
+insert into cuentas (numero_cuenta,cedula_propietario,fecha_creacion,saldo)
+values ('22134','24322','10/10/2010',0);

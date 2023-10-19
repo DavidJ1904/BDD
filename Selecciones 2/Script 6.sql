@@ -60,3 +60,47 @@ and numero_cuenta ='22002' or numero_cuenta ='22004'
 and EXTRACT(DAY FROM fecha) = 26 
 and EXTRACT(DAY FROM fecha) = 29
 and EXTRACT(MONTH FROM fecha) = 5
+
+--RETO 23
+select * from transaccion
+delete from transaccion
+create table banco(
+	codigo_banco int,
+	codigo_transaccion int,
+	detalle varchar (100),
+	constraint banco_pk primary key (codigo_banco)
+)
+select *from banco
+
+alter table banco
+add constraint banco_transaccion_fk
+foreign key (codigo_transaccion)
+references transaccion(codigo)
+
+
+insert into banco(codigo_banco,codigo_transaccion,detalle)
+values(8910,53147,'Transferencia');
+
+insert into banco(codigo_banco,codigo_transaccion,detalle)
+values(9312,53147,'Deposito');
+
+insert into banco(codigo_banco,codigo_transaccion,detalle)
+values(9812,32165,'Transferencia');
+
+insert into banco(codigo_banco,codigo_transaccion,detalle)
+values(8912,32165,'Pago');
+
+insert into banco(codigo_banco,codigo_transaccion,detalle)
+values(9112,78542,'Transferencia');
+
+insert into banco(codigo_banco,codigo_transaccion,detalle)
+values(1290,23210,'Pago');
+
+insert into banco(codigo_banco,codigo_transaccion,detalle)
+values(1234,23210,'Deposito');
+
+insert into banco(codigo_banco,codigo_transaccion,detalle)
+values(2134,54143,'Deposito');
+
+insert into banco(codigo_banco,codigo_transaccion,detalle)
+values(9012,54143,'Pago');

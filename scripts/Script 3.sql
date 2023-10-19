@@ -26,3 +26,7 @@ where cedula like '%05'
 
 select nombre,apellido from estudiante
 where nombre like 'M%' or apellido like 'Z%'
+
+--RETO 23
+alter table estudiante
+add

@@ -18,7 +18,7 @@ insert into videojuego(codigo, nombre, descripcion, valoracion)
 values(93475, 'Call of Clans', 'juego de terror', 10);
 
 insert into videojuegos(codigo, nombre, descripcion, valoracion)
-values(15983, 'Fornite', 'juego de suspenso', 10);
+values(15984, 'Fornite', 'juego de suspenso', 10);
 
 insert into videojuego(codigo, nombre, valoracion)
 values(35784, 'Minecraft', 3);
@@ -55,3 +55,36 @@ and (valoracion > '7')
 and (nombre like 'C%') 
 or (valoracion > '8')
 and (nombre like 'D%')
+
+--RETO 23
+delete from videojuego
+create table plataforma (
+	id_plataforma int,
+	nombre_plataforma varchar (50) not null,
+	codigo_videojuego int,
+	constraint plataforma_pk primary key (id_plataforma)
+)
+
+alter table plataforma
+add constraint plataforma_videojuego_fk
+foreign key (codigo_videojuego)
+references videojuego (codigo)
+
+select * from plataforma
+
+insert into plataforma(id_plataforma,nombre_plataforma,codigo_videojuego)
+values(12909,'PC',70215);
+insert into plataforma(id_plataforma,nombre_plataforma,codigo_videojuego)
+values(19009,'PC',07563);
+insert into plataforma(id_plataforma,nombre_plataforma,codigo_videojuego)
+values(12919,'PS',70215);
+insert into plataforma(id_plataforma,nombre_plataforma,codigo_videojuego)
+values(14119,'PS',63549)
+insert into plataforma(id_plataforma,nombre_plataforma,codigo_videojuego)
+values(12194,'XBox',63549);
+insert into plataforma(id_plataforma,nombre_plataforma,codigo_videojuego)
+values(11194,'XBox',63240);
+insert into plataforma(id_plataforma,nombre_plataforma,codigo_videojuego)
+values(12109,'Nintendo',63549)
+insert into plataforma(id_plataforma,nombre_plataforma,codigo_videojuego)
+values(12191,'Nintendo',63240)
