@@ -78,3 +78,4 @@ values (9,'Jamon',1.00,120);
 insert into productos(codigo,nombre,precio,stock)
 values (10,'Coca Cola',3.50,300)
 
+
