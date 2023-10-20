@@ -88,7 +88,7 @@ insert into plataforma(id_plataforma,nombre_plataforma,codigo_videojuego)
 values(12109,'Nintendo',63549)
 insert into plataforma(id_plataforma,nombre_plataforma,codigo_videojuego)
 values(12191,'Nintendo',63240)
---RETO 23
+--RETO 24
 --CONSULTA
 select vi.nombre,vi.descripcion,vi.valoracion, pl.id_plataforma, pl.nombre_plataforma, pl.codigo_videojuego from 
 plataforma pl, videojuego vi
@@ -101,3 +101,10 @@ select pl.id_plataforma, pl.nombre_plataforma, pl.codigo_videojuego from
 plataforma pl, videojuego vi
 where vi.codigo = pl.codigo_videojuego 
 and nombre ='God of Ward'
+
+--RETO 25
+--AGREGACION 1
+select codigo_videojuego , count(*) from plataforma
+group by (codigo_videojuego)
+--AGREGACION 2
+select ROUND(AVG(valoracion),2)as decimal from videojuego

@@ -95,3 +95,12 @@ where (re.fecha > '2023/08/01' and re.fecha <'2023/08/31') or
 select em.codigo_empleado,em.nombre,em.fecha,em.hora from
 empleado em,registro_entrada re
 where em.codigo_empleado = re.codigo_registro
+
+--RETO 25
+--AGREGACION 1
+select cedula_empleado,count (*) from registros_entrada
+group by (cedula_empleado)
+--AGREGACION 2
+select MAX(cast(fecha as date)), MIN(cast(fecha as date))  
+from registros_entrada
+

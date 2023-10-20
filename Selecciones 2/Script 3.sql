@@ -72,3 +72,12 @@ select es.cedula,es.nombre,es.apellido,es.email,es.fecha_nacimiento,es.codigo_pr
 estudiantes es, profesores pro 
 where es.codigo_profesor = pro.codigo
 and pro.nombre = 'Francisco'
+
+--RETO 25
+--AGREGACION 1
+select codigo_profesor, count (*) from estudiantes , profesores
+group by (codigo_profesor)
+--AGREGACION 2
+select ROUND(AVG(extract(year from age(fecha_nacimiento))))as edad_promedio
+from estudiantes
+

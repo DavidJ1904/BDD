@@ -116,3 +116,11 @@ select * from
 banco b,transaccion tr
 where tr.codigo = b.codigo_transaccion
 and codigo= codigo_transaccion'1'
+
+--RETO 25
+--AGREGACION 1
+select count (*) from transaccion
+where tipo ='C'
+--AGREGACION 2
+select numero_cuenta, ROUND(AVG(cast(monto as decimal)),2) as decimal 
+from transaccion group by (numero_cuenta)

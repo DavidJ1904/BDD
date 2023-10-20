@@ -56,3 +56,10 @@ select cl.cedula,cl.nombre,cl.apellido from
 cliente cl, compras co
 where cl.cedula=co.cedula
 and nombre='Monica'
+--RETO 25
+--AGREGACION 1
+select cedula , SUM(cast(monto as numeric)) from compras 
+group by (cedula) 
+--AGREGACION 2
+select fecha_compra,count(*) from compras
+group by (fecha_compra)

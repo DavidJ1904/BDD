@@ -80,3 +80,14 @@ select cu.numero_cuenta,cu.fecha_creacion,cu.saldo,us.cedula from
 cuentas cu,usuario us
 where cu.cedula_propietario = us.cedula
 and cu.fecha_creacion = '21/09/2022' and cu.fecha_creacion = '21/09/2023'
+
+--RETO 25
+--AGREGACION 1
+select AVG (cast(saldo as numeric)) 
+from cuentas cu, usuario us
+where cu.cedula_propietario = us.cedula
+and cu.cedula_propietario ='24502'
+--AGREGACION 2
+select tipo_cuenta, count (tipo_cuenta)
+from usuario group by (tipo_cuenta)
+

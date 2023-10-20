@@ -64,3 +64,13 @@ select * from
 prestamo pr,persona pe
 where pr.cedula=pe.cedula
 and nombre='Sean'
+
+--RETO 25
+--AGREGACION 1
+select cedula,SUM(cast(monto as numeric)) from prestamo
+group by (cedula)
+--AGREGACION 2
+select count(*)
+from persona pr, prestamo pe
+where pr.cedula = pe.cedula
+and numero_hijos > 1

@@ -91,3 +91,8 @@ productos pr, ventas vn
 where pr.codigo = vn.codigo_producto
 and vn.codigo_producto =5 
 
+--RETO 25
+--AGREGACION 1
+select MAX(cast(precio as numeric)) from productos
+--AGREGACION 2
+select SUM(cantidad) from ventas
